@@ -1,4 +1,4 @@
-import static org.junit.Assert.*;
+package assignment1;
 
 import org.junit.Test;
 
