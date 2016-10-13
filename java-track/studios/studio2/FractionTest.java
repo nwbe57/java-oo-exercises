@@ -1,8 +1,10 @@
-package studio1;
+package studio2;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import studio1.Fraction;
 
 public class FractionTest {
 
