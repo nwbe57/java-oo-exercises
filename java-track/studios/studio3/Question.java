@@ -21,7 +21,7 @@ public class Question {
 		return riteAnswer;
 	}
 	
-	public String getuserResponse() {
+	public String getUserResponse() {
 		return userResponse;
 	}
 
@@ -31,7 +31,7 @@ public class Question {
 	
 	public boolean isCorrect(){
 		
-		this.userResponse = getuserResponse();
+		this.userResponse = getUserResponse();
 		this.riteAnswer = getRiteAnswer();
 		
 		if(this.userResponse.equalsIgnoreCase(this.riteAnswer)){

@@ -1,18 +1,24 @@
 package assignment1;
 
+import java.util.ArrayList;
+
+
+
 public class Course {
 	
 	private String name;
 	private int credits;
 	private int seatsLeft;
 	private Student[] roster;
-	
+	private static ArrayList<Course> courseList = new ArrayList<Course>();
+		
 	
 	public Course(String name, int credits, int seatsStart) {
 		this.name = name;
 		this.credits = credits;
 		this.seatsLeft = seatsStart;
 		roster = new Student[seatsStart];
+		courseList.add(this);
 	}
 	
 	public int getRemainingSeats(){
@@ -75,8 +81,31 @@ public class Course {
 		return avgGPA;
 	}
 	
+	public static void createCourse(String name, int credits, int seatsStart){
+		@SuppressWarnings("unused")
+		Course x = new Course(name, credits, seatsStart);
+	}
+	
+//	public static ArrayList<Course> getAllCourses(){
+//		return courseList;
+//	}
+	
+	public static String getAllCourses(){
+        String x = "";
+		
+		for(int i = 0; i < courseList.size(); i++){
+			int spot = i + 1;
+			
+			if(courseList.get(i) != null){
+				x += spot + ". " + courseList.get(i) + "\n";
+			}
+		}
+		
+		return x;
+	}
+	
 	public String toString(){
-		return this.name + ", " + this.credits;
+		return "(" + this.name + ", " + this.credits + " credits)";
 	}
 
 	public static void main(String[] args) {
@@ -99,6 +128,7 @@ public class Course {
 		nf.submitGrade(4.0, 3);
 		
 		Course econ = new Course("econ", 3, 20);
+		createCourse("Math", 4, 50);
 		econ.addStudent(newbie);
 		econ.addStudent(n);
 		econ.addStudent(nf);
@@ -109,6 +139,10 @@ public class Course {
 		System.out.println(econ.getRemainingSeats());
 		System.out.println(econ.generateRoster());
 		System.out.println(econ.averageGPA());
+		
+		System.out.println(getAllCourses());
+		
+		
 
 	}
 

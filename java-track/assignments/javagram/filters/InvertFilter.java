@@ -1,11 +1,12 @@
 package javagram.filters;
 
-import javagram.Picture;
 import java.awt.Color;
 
-public class BlueFilter implements Filter{
+import javagram.Picture;
 
-	public Picture process(Picture original) {
+public class InvertFilter implements Filter{
+
+public Picture process(Picture original) {
 		
 		Picture processed = new Picture(original.width(), original.height());
         
@@ -14,20 +15,24 @@ public class BlueFilter implements Filter{
 	      for (int j = 0; j < original.height(); j++) {
 	    	  
 	    	  Color c = original.get(i, j);
+	    	  
+	    	  int r = c.getRed();
+	    	  int g = c.getGreen();
+	    	  int b = c.getBlue();
+	    	  
+	    	  
+	    		  r = 255 - r;
+	    	      g = 255 - g;
+	    	      b = 255 - b;
+	    	  
+	    	  
 	          
-	          //get color components from each pixel
-	          int r = c.getRed();
-	          int g = c.getGreen();
-	          int b = c.getBlue();
-	          
-	          int newBlue = (r + g + b) / 3;
-	          
-	          processed.set(i, j, new Color(0, 0, newBlue));
+	          processed.set(i, j, new Color(r, g, b));
 	    	  
 	      }
 	    }
 		
 		return processed;
 	}
-
+	
 }

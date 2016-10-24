@@ -92,7 +92,7 @@ public class Student {
 		return this.lastName + ", " + this.firstName + " ID#" + this.studID;
 	}
 	
-	public Student createLegacy(Student a, Student b){
+	public static Student createLegacy(Student a, Student b){
 		DecimalFormat df = new DecimalFormat("#.###");
 		df.setMinimumFractionDigits(3);
 		

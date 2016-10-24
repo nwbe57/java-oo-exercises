@@ -46,8 +46,8 @@ public class QuestionWindow {
 		frame.getContentPane().setLayout(null);
 		
 		JList list = new JList();
-		list.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		list.setBounds(160, 25, 246, 118);
+		list.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		frame.getContentPane().add(list);
 		
 		JButton btnNext = new JButton("Next Question");
