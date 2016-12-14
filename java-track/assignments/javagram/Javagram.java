@@ -130,6 +130,7 @@ public class Javagram {
 			else if(response.equalsIgnoreCase("n")){
 				System.out.println("Original image will not be overwritten.");
 				in.close();
+				return;
 			}
 			else{
 				System.out.println("Must type Y or N.");
@@ -141,6 +142,7 @@ public class Javagram {
 		
 		if (fileName.equals("exit")) {
 			System.out.println("Image not saved");
+		
 		} else {
 			String absFileName = dir + File.separator + fileName;
 			processed.save(absFileName);

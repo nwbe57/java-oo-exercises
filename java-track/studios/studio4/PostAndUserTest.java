@@ -2,26 +2,21 @@ package studio4;
 
 import static org.junit.Assert.*;
 
+
 import org.junit.Test;
+
 
 public class PostAndUserTest {
 	
 	
 
 	@Test
-	public void IsValidUsernameTest() {
-		boolean ansF = false;
-		boolean ansT = true; 
-		assertEquals("aaaaa", ansT);
-		assertEquals(" ", ansF);
+	public void testIsValidUsername() {
+		User x = new User("aaaaa", "12");
+		User y = new User("aaa", "12345");
+		assertTrue(x.isValidUsername(x.getUserName()));
+		assertFalse(y.isValidUsername(y.getUserName()));
 	}
 	
-	@Test
-	public void isValidPassword(){
-		boolean ansF = false;
-		boolean ansT = true; 
-		assertEquals("aaaaa", ansT);
-		assertEquals(" ", ansF);
-	}
 
 }
